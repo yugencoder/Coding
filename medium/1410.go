@@ -1,4 +1,4 @@
-package p1410
+package problem
 
 func EntityParser(text string) string {
 	var start int
