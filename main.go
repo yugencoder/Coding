@@ -8,13 +8,14 @@ import (
 
 func main() {
 	type TestCases struct {
-		queries []int
-		m       int
+		s string
+		k int
 	}
-	testCases := []TestCases{{[]int{3, 1, 2, 1}, 5}}
+
+	testCases := []TestCases{{"cxayrgpcctwlfupgzirmazszgfiusitvzsnngmivctprcotcuutfxdpbrdlqukhxkrmpwqqwdxxrptaftpnilfzcmknqljgbfkzuhksxzplpoozablefndimqnffrqfwgaixsovmmilicjwhppikryerkdidupvzdmoejzczkbdpfqkgpbxcrxphhnxfazovxbvaxyxhgqxcxirjsryqxtreptusvupsstylpjniezyfokbowpbgxbtsemzsvqzkbrhkvzyogkuztgfmrprz", 5}}
 
 	for _, tc := range testCases {
-		fmt.Println("Input : %v", tc)
-		fmt.Println(problem.ProcessQueries_2(tc.queries, tc.m))
+		fmt.Printf("Input : %v\n", tc)
+		fmt.Printf("Output: %v\n", problem.CanConstruct(tc.s, tc.k))
 	}
 }
