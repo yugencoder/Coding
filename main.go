@@ -2,20 +2,13 @@ package main
 
 import (
 	"fmt"
-
-	"../LC/medium"
+	"yk.com/yugencoder/LC/medium/13XX"
 )
 
 func main() {
-	type TestCases struct {
-		nums []int
-	}
-
-	testCases := []TestCases{
-		{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}}
-
-	for _, tc := range testCases {
-		fmt.Printf("Input : %v\n", tc)
-		fmt.Printf("Output: %v\n", problem.SumFourDivisors(tc.nums))
-	}
+	n := 4
+	left := []int{1, -1, 3, -1}
+	right := []int{2, -1, -1, -1}
+	res := t13XX.ValidateBinaryTreeNodes(n,left, right)
+	fmt.Print(res)
 }
