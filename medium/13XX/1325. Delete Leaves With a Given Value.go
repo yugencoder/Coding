@@ -3,7 +3,7 @@ package t13XX
 import "fmt"
 
 /**
- * Definition for a binary tree node.
+ * Definition for a binary heap node.
  * type TreeNode struct {
  *     Val int
  *     Left *TreeNode

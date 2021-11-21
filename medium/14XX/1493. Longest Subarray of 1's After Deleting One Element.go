@@ -2,7 +2,7 @@ package _14XX
 
 import "math"
 
-func longestSubarray(nums []int) int {
+func longestSubarray2(nums []int) int {
 	numsMap := map[int]int{}
 
 	prev := 0
