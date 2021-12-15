@@ -12,7 +12,15 @@ func Test_isInterleave(t *testing.T) {
 		name string
 		args args
 		want bool
-	}{
+	}{{
+		name: "",
+		args: args{
+			s1: "cc",
+			s2: "bca",
+			s3: "cbcac",
+		},
+		want: true,
+	},
 		{
 			name: "",
 			args: args{
