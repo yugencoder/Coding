@@ -15,6 +15,14 @@ func Test_isInterleave(t *testing.T) {
 	}{{
 		name: "",
 		args: args{
+			s1: "aabcc",
+			s2: "dbbca",
+			s3: "aadbbcbcac",
+		},
+		want: true,
+	},{
+		name: "",
+		args: args{
 			s1: "cc",
 			s2: "bca",
 			s3: "cbcac",
@@ -59,6 +67,14 @@ func Test_isInterleave(t *testing.T) {
 				s1: "abababababababababababababababababababababababababababababababababababababababababababababababababbb",
 				s2: "babababababababababababababababababababababababababababababababababababababababababababababababaaaba",
 				s3: "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbb",
+			},
+			want: false,
+		},{
+			name: "",
+			args: args{
+				s1: "aabcc",
+				s2: "dbbca",
+				s3: "aadbbbaccc",
 			},
 			want: false,
 		},

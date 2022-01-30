@@ -51,9 +51,9 @@ func Test_recoverTree(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			levelOrder(tt.args.root)
+			//levelOrder(tt.args.root)
 			recoverTree(tt.args.root)
-			levelOrder(tt.args.root)
+			//levelOrder(tt.args.root)
 		})
 	}
 }

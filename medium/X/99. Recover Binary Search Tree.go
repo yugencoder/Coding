@@ -20,6 +20,63 @@ type TreeNode struct {
 }
 
 func recoverTree(root *TreeNode) {
+	var prev, node1, node2 *TreeNode
+	var traverse func(root *TreeNode)
+
+	traverse = func(root *TreeNode) {
+		if root == nil {
+			return
+		}
+
+		traverse(root.Left)
+
+		if prev != nil {
+			if prev.Val > root.Val {
+				if node1 == nil {
+					node1 = prev
+				}
+
+				node2 = root
+
+			}
+		}
+
+		prev = root
+		traverse(root.Right)
+	}
+
+	traverse(root)
+
+	fmt.Println(node1.Val)
+	fmt.Println(node2.Val)
+	node1.Val, node2.Val = node2.Val, node1.Val
+
+	return
+}
+
+//
+//func traverse(root *TreeNode) {
+//
+//}
+
+func levelOrder(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	var height = heightOfTree(root)
+	fmt.Printf("Height of a tree : %d \n", height)
+	fmt.Printf("Level Order Traversal : \n")
+
+	for i := 1; i <= height; i++ {
+		printLevel(root, i)
+	}
+
+	fmt.Printf("\n")
+}
+
+/*
+
+func recoverTree(root *TreeNode) {
 
 	var firstNode, secondNode, prevNode *TreeNode
 	var inorder func(*TreeNode)
@@ -42,7 +99,7 @@ func recoverTree(root *TreeNode) {
 	inorder(root)
 	firstNode.Val, secondNode.Val = secondNode.Val, firstNode.Val
 }
-
+*/
 func heightOfTree(root *TreeNode) int {
 	if root == nil {
 		return 0
@@ -74,17 +131,19 @@ func printLevel(root *TreeNode, h int) {
 	}
 }
 
-func levelOrder(root *TreeNode) {
-	if root == nil {
-		return
-	}
-	var height = heightOfTree(root)
-	fmt.Printf("Height of a tree : %d \n", height)
-	fmt.Printf("Level Order Traversal : \n")
-
-	for i := 1; i <= height; i++ {
-		printLevel(root, i)
-	}
-
-	fmt.Printf("\n")
-}
+//
+//func levelOrder(root *TreeNode) {
+//	if root == nil {
+//		return
+//	}
+//	var height = heightOfTree(root)
+//	fmt.Printf("Height of a tree : %d \n", height)
+//	fmt.Printf("Level Order Traversal : \n")
+//
+//	for i := 1; i <= height; i++ {
+//		printLevel(root, i)
+//	}
+//
+//	fmt.Printf("\n")
+//}
+//*/
